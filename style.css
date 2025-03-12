@@ -1,0 +1,288 @@
+html {
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+    background: linear-gradient(to bottom, #0a45bc,#041a45);
+}
+::-webkit-scrollbar {
+    width: 0.6vw;
+    background-color: transparent;
+    background-repeat: no-repeat;
+}
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(to bottom, #0a45bc,#041a45);
+    border-radius: 1vw;
+}
+::-webkit-scrollbar-track{
+    background: linear-gradient(to bottom, #0a45bc,#041a45);
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(1vw);
+    }
+    to {9
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes nav {
+    from{
+        opacity: 0;
+        scale: 0;
+    }
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
+#header {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    border-bottom: solid;
+    border-width: 0.3vw;
+    border-color: #05328e;
+}
+#logo {
+    animation: nav 1s;
+    max-width: 12%;
+    margin: 1vw;
+}
+#navbar a {
+    text-decoration: none;
+    color: #05328e;
+    font-size: 1.6vw;
+    font-family: "Hubot Sans";
+    font-weight: 800;
+    transition-duration: 300ms;
+}
+#navbar a:hover{
+    color: #355fb4;
+    transition-duration: 300ms;
+    border-bottom: solid;
+    border-color: #355fb4;
+}
+#navbar {
+    animation: nav 1s;
+    white-space: nowrap;
+    margin-right: 4vw;
+    display: flex;
+    justify-content: space-around;
+    gap: 3.7vw;
+}
+#home {
+    background-image: url(images/homepage.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+}
+h1 {
+    animation: fadeIn 1s ease-out forwards;
+    font-family: "Hubot Sans";
+    font-size: 16vw;
+    color: rgb(255, 255, 255);
+    margin-top: 15vw;
+    margin-bottom: 15vw;
+}
+#onas   {
+    color: white;
+    font-family: "Hubot Sans";
+    margin: 10vw;
+    text-align: center;
+    font-size: 2.5vw;
+}
+#slovenija {
+    max-width: 50vw;
+    margin-top: 4vw;
+    transition-duration: 200ms;
+}
+#slovenija:hover{
+    transform: scale(1.1);
+    transition-duration: 200ms;
+}
+#map {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5vw;
+}
+#map iframe{
+    width: 60vw;
+    height: 40vw;
+    filter: grayscale(0.5);
+    opacity: 0.8;
+}
+#kontakt {
+    padding-top: 5vw;
+    padding-bottom: 5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: #05328e;
+    font-family: 'Hubot Sans';
+    font-size: 2vw;
+    padding: 3vw;
+    background-color: #ffffff;
+    margin-inline: 20vw;
+    border-radius: 4vw;
+    margin-bottom: 10vw;
+    border: double;
+    border-color: #082766;
+    border-width: 1vw;
+}
+.icon {
+    width: 6vw;
+    transition-duration: 100ms;
+}
+.icon:hover{
+    scale: 1.1;
+    transition-duration: 100ms;
+}
+.gallery {
+    margin-bottom: 5vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.gallery img{
+    width: 20vw;
+    height: auto;
+    object-fit: cover;
+    margin: 3vw;
+    border-radius: 1vw;
+    transition-duration: 200ms;
+    border: double;
+    border-color: #082766;
+    border-width: 0.5vw;   
+}
+.gallery img:hover{
+    transform: scale(1.2);
+    transition-duration: 200ms;
+    border: none;
+}
+
+.slike {
+    padding-top: 10vw;
+}
+.parallax {
+    background-image: url(images/paralax.jpg);
+    height: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.statistike {
+    display: flex;
+    justify-content: space-around;
+}
+.statistika h5 {
+    font-size: 5vw;
+    font-family: 'Hubot Sans';
+    color: white;
+    margin: 0;
+    text-shadow: 1vw #05328e;
+
+}
+.statistika {
+    margin-top: 15vw;
+    margin-bottom: 15vw;
+    text-align: center;
+    color: white;
+    font-family: 'Hubot Sans';
+    margin-inline: 7vw;
+}
+.statistika p {
+    font-size: 2vw;
+   
+}
+#uprava {
+    margin-top: 5vw;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 5vw;
+}
+.CEO {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Hubot Sans";
+    color: #05328e;
+    text-align: center;
+    background-color: white;
+    padding: 3vw;
+    border-radius: 2vw;
+    border: double;
+    border-width: 1vw;
+    transition-duration: 300ms;
+    font-size: 2vw;
+
+}
+.CEO h5 {
+    margin:0;
+}
+.CEO img{
+    width: 20vw;
+    border-radius: 2vw;
+    transition-duration: 300ms;
+}
+.CEO:hover {
+    transform: scale(1.1);
+    transition-duration: 300ms;
+}
+.CEO img:hover{
+    transform: scale(1.1);
+    transition-duration: 300ms;
+}
+footer {
+    padding-bottom: 6vw;
+    padding-top: 5vw;
+    background-color: #01102d;
+    border-top: solid;
+    border-color: #0a45bc;
+    border-width: 0.5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#footerlogo {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10vw;
+}
+#footerlogo img{
+    width: 7vw;
+    padding-bottom: 2vw ;
+}
+#foot {
+    display: flex;
+    justify-content: space-around;
+    gap: 5vw;
+
+}
+footer h2 {
+    color: white;
+    font-family: "Hubot Sans";
+    font-size: 1vw;
+}
+footer a {
+    color: white;
+    text-decoration: none;
+}
+#src    {
+    font-size: 1vw;
+    background-color: #01102d;
+    padding-inline: 2vw;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    color: #05328e;
+    font-family: "Hubot Sans";
+}

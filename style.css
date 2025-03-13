@@ -4,6 +4,8 @@ html {
 body {
     margin: 0;
     background: linear-gradient(to bottom, #0a45bc,#041a45);
+    font-family: "Hubot Sans";
+    color: white;
 }
 ::-webkit-scrollbar {
     width: 0.6vw;
@@ -55,7 +57,6 @@ body {
     text-decoration: none;
     color: #05328e;
     font-size: 1.6vw;
-    font-family: "Hubot Sans";
     font-weight: 800;
     transition-duration: 300ms;
 }
@@ -83,15 +84,11 @@ body {
 }
 h1 {
     animation: fadeIn 1s ease-out forwards;
-    font-family: "Hubot Sans";
     font-size: 16vw;
-    color: rgb(255, 255, 255);
     margin-top: 15vw;
     margin-bottom: 15vw;
 }
 #onas   {
-    color: white;
-    font-family: "Hubot Sans";
     margin: 10vw;
     text-align: center;
     font-size: 2.5vw;
@@ -124,7 +121,6 @@ h1 {
     justify-content: space-around;
     align-items: center;
     color: #05328e;
-    font-family: 'Hubot Sans';
     font-size: 2vw;
     padding: 3vw;
     background-color: #ffffff;
@@ -183,8 +179,6 @@ h1 {
 }
 .statistika h5 {
     font-size: 5vw;
-    font-family: 'Hubot Sans';
-    color: white;
     margin: 0;
     text-shadow: 1vw #05328e;
 
@@ -193,8 +187,6 @@ h1 {
     margin-top: 15vw;
     margin-bottom: 15vw;
     text-align: center;
-    color: white;
-    font-family: 'Hubot Sans';
     margin-inline: 7vw;
 }
 .statistika p {
@@ -211,7 +203,6 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: "Hubot Sans";
     color: #05328e;
     text-align: center;
     background-color: white;
@@ -264,18 +255,16 @@ footer {
     display: flex;
     justify-content: space-around;
     gap: 5vw;
-
+    
 }
 footer h2 {
-    color: white;
-    font-family: "Hubot Sans";
     font-size: 1vw;
 }
 footer a {
-    color: white;
     text-decoration: none;
+    color: white;
 }
-#src    {
+#bottom    {
     font-size: 1vw;
     background-color: #01102d;
     padding-inline: 2vw;
@@ -284,5 +273,49 @@ footer a {
     justify-content: space-between;
     align-items: end;
     color: #05328e;
-    font-family: "Hubot Sans";
+}
+#srvc {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin: 1vw;
+}
+#avtocesta {
+    background-image: url(images/highway.jpg);
+    background-size: cover;
+    background-attachment:fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#storitve {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1vw;
+    margin: 15vw;
+    margin-inline: 15vw;
+    color: #041a45;
+    border-radius: 3vw;
+    font-size: 3vw;
+    margin-top: 5vw;
+}
+#storitve h2 {
+    margin: 0;
+    margin-top: 1.2vw;
+    color: #041a45;
+}
+.storitev {
+    font-size: 1.4vw;
+    margin: 2vw;
+    padding: 3vw;
+    background-color: #ffffff70;
+    backdrop-filter: blur(0.1vw);
+    color: #041a45;
+    border-radius: 2vw;
+    transition-duration: 700ms;
+}
+.storitev:hover{
+    scale: 1.1;
+    background-color: #ffffff95;
+    transition-duration: 700ms;
 }

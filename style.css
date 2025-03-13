@@ -302,7 +302,7 @@ footer a {
 #storitve h2 {
     margin: 0;
     margin-top: 1.2vw;
-    color: #041a45;
+    color: #05328e;
 }
 .storitev {
     font-size: 1.4vw;
@@ -316,6 +316,23 @@ footer a {
 }
 .storitev:hover{
     scale: 1.1;
-    background-color: #ffffff95;
+    background-color: #ffffffc3;
     transition-duration: 700ms;
+}
+#lfooter img {
+    width: 4vw;
+    padding-inline: 1vw;
+    filter: brightness(0.8);
+    transition-duration: 200ms;
+}
+#lfooter img:hover {
+    filter: brightness(1);
+    transition-duration: 200ms;
+}
+#rfooter a {
+    transition-duration:100ms ;
+}
+#rfooter a:hover{
+    color: #547fd4;
+    transition-duration: 100ms;
 }

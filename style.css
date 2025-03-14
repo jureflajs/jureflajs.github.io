@@ -52,10 +52,11 @@ body::selection{
     border-bottom: solid;
     border-width: 0.3vw;
     border-color: #05328e;
+    max-height: 7vw;
 }
 #logo {
     animation: nav 1s;
-    max-width: 12%;
+    max-width: 4vw;
     margin: 1vw;
 }
 #navbar a {

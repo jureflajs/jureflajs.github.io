@@ -7,6 +7,10 @@ body {
     font-family: "Hubot Sans";
     color: white;
 }
+body::selection{
+    color: white;
+    background: orange;
+}
 ::-webkit-scrollbar {
     width: 0.6vw;
     background-color: transparent;

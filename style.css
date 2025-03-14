@@ -78,6 +78,7 @@ body::selection{
     margin-right: 4vw;
     display: flex;
     justify-content: space-around;
+    align-items: center;
     gap: 3.7vw;
 }
 #home {
@@ -94,13 +95,8 @@ h1 {
     margin-top: 15vw;
     margin-bottom: 15vw;
     text-shadow: 0vw 0vw 5vw #000000;
-    transition-duration: 10s;
+}
 
-}
-h1:hover{
-    scale: 1.02;
-    transition-duration: 5s;
-}
 #onas   {
     margin: 10vw;
     text-align: center;

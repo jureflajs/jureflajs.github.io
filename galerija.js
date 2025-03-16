@@ -9,4 +9,4 @@ document.addEventListener("DOMContentLoaded", function() {
         img.alt = `Image ${i}`;  
         gallery.appendChild(img);
     }
-});
+}); 

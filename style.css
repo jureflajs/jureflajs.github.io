@@ -329,28 +329,57 @@ footer a {
     font-size: 3vw;
     margin-top: 5vw;
 }
-#storitve h2 {
-    margin: 0;
-    margin-top: 1.2vw;
-    color: #05328e;
+@keyframes storitev {
+    from {
+        transform: translateY(3vw);
+    }
+    to{
+        transform: translateY(0);
+    }
 }
+@keyframes storitevreverse {
+    from {
+        transform: translateY(0vw);
+    }
+    to{
+        transform: translateY(3vw);
+    }
+}
+
 .storitev {
     font-size: 1.4vw;
     margin: 2vw;
     padding: 3vw;
     background-color: #ffffff70;
     backdrop-filter: blur(0.1vw);
-    color: #041a45;
+    color: #041a4500;
     border-radius: 2vw;
     transition-duration: 700ms;
     box-shadow: 0 0 0 black;
 }
 .storitev:hover{
+    color: #041a45;
     scale: 1.1;
     box-shadow: 0 0 3vw rgba(0, 0, 0, 0.51);
     background-color: #ffffffc3;
     transition-duration: 700ms;
     
+}
+.storitev h3{
+    transform: translateY(3vw);
+    color: #041a45;
+
+}
+.storitev:hover h3{
+    animation: storitev 1s forwards;
+}
+.storitev:not(:hover) h3{
+    animation: storitevreverse 1s forwards;
+}
+#storitve h2 {
+    margin: 0;
+    margin-top: 1.2vw;
+    color: #05328e;
 }
 #lfooter img {
     width: 4vw;
@@ -368,4 +397,11 @@ footer a {
 #rfooter a:hover{
     color: #547fd4;
     transition-duration: 100ms;
+}
+#top {
+    position: fixed;
+    z-index: 1;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 1vw;
 }

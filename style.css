@@ -87,7 +87,50 @@ body::selection{
     background-position: center;
     background-repeat: no-repeat;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+@keyframes button{
+    0% {outline: 0vw solid white;}
+    90% {
+        outline-offset: 1vw;
+        outline: 0.2vw solid transparent;}
+    100% {
+        outline-offset: 1vw;
+        outline: 0.2vw solid transparent;}
+}
+@keyframes buttonhover{
+    0% {outline: 0vw solid white;
+    outline-offset: 0vw;}
+
+    90% {
+        outline-offset: 2vw;
+        outline: 0.2vw solid transparent;}
+    100% {
+        outline-offset: 2vw;
+        outline: 0.2vw solid transparent;}
+}
+#home button{
+    font: inherit;
+    font-size: 1.3vw;
+    font-weight: 900;
+    text-align: center;
+    transform: translateY(-12vw);
+    padding: 0.8vw;
+    padding-inline: 4vw;
+    border-radius: 3vw;
+    color: white;
+    background:linear-gradient(to bottom, #05328e, #082766) ;
+    border: solid 0.1vw;
+    transition-duration:500ms ;
+    animation: button 1s  infinite;
+}
+#home button:hover{
+    scale: 1.05;
+    transition-duration: 500ms;
+    outline-offset: 2vw;
+    animation:buttonhover 1s infinite;
 }
 h1 {
     animation: fadeIn 1s ease-out forwards;
@@ -176,6 +219,7 @@ h1 {
     transform: scale(1.2);
     transition-duration: 200ms;
 }
+
 .slike {
     padding-top: 10vw;
 }

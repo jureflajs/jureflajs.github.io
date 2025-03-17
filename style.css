@@ -131,6 +131,7 @@ body::selection{
     transition-duration: 500ms;
     outline-offset: 2vw;
     animation:buttonhover 1s infinite;
+    cursor: pointer;
 }
 h1 {
     animation: fadeIn 1s ease-out forwards;
@@ -145,6 +146,9 @@ h1 {
     text-align: center;
     font-size: clamp(15px, 2.5vw, 5vw);
     
+}
+#onas:hover #slovenija {
+    scale: 1.1;
 }
 #slovenija {
     max-width: 50vw;
@@ -351,6 +355,7 @@ footer a {
     justify-content: space-around;
     text-align: center;
     margin: 1vw;
+    transition-duration: 1s;
 }
 #avtocesta {
     background-image: url(images/highway.jpg);
@@ -370,6 +375,10 @@ footer a {
     border-radius: 3vw;
     font-size: 3vw;
     margin-top: 5vw;
+}
+#avtocesta :hover #srvc{
+    scale: 1.1;
+    transition-duration: 1s;
 }
 @keyframes storitev {
     from {

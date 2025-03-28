@@ -134,6 +134,7 @@ body::selection{
     cursor: pointer;
 }
 h1 {
+    text-align: center;
     animation: fadeIn 1s ease-out forwards;
     font-size: 16vw;
     margin-top: 15vw;
@@ -146,6 +147,9 @@ h1 {
     text-align: center;
     font-size: clamp(15px, 2.5vw, 5vw);
     
+}
+#onas p {
+    text-align: left;
 }
 #onas:hover #slovenija {
     scale: 1.1;
@@ -167,7 +171,7 @@ h1 {
     margin-bottom: 5vw;
 }
 #map iframe{
-    width: 60vw;
+    width: 80vw;
     height: 40vw;
     filter: grayscale(0.5);
     opacity: 0.8;
@@ -192,10 +196,14 @@ h1 {
     box-shadow: 0 0 3vw #000000;
     text-shadow: 0 0 3vw #05328e;
 }
+#kontakt p {
+    margin: 0.5vw;
+}
 .icon {
     width: 6vw;
     transition-duration: 300ms;
     filter: drop-shadow(0 0 0.2vw #000000);
+    margin: 1vw;
 }
 .icon:hover{
     scale: 1.1;
@@ -270,6 +278,7 @@ h1 {
     display: flex;
     justify-content: space-around;
     margin-bottom: 5vw;
+    margin-inline: 7vw;
 }
 .CEO {
     display: flex;
@@ -278,7 +287,7 @@ h1 {
     color: #05328e;
     text-align: center;
     background-color: white;
-    padding: 3vw;
+    padding: 4.5vw;
     border-radius: 2vw;
     border: double;
     border-width: 1vw;
@@ -287,8 +296,19 @@ h1 {
     box-shadow: 0 0 2vw #01102d;
 
 }
+.CEO h4{
+    margin: 0.2vw;
+    transition-duration: 300ms;
+}
 .CEO h5 {
-    margin:0;
+    margin:0.1vw;
+    font-size: 1vw;
+}
+.CEO h6 {
+    margin: 0.1vw;
+    padding: 0;
+    font-size: 1.2vw;
+    font-weight: 400;
 }
 .CEO img{
     box-shadow:0 0 0.5vw #041a45 ;
@@ -305,6 +325,10 @@ h1 {
     transform: scale(1.1);
     transition-duration: 300ms;
     box-shadow:0 0 2vw #041a45 ;
+}
+.CEO img:hover h4{
+    padding-top: 1vw;
+    transition-duration: 300ms;
 }
 footer {
     padding-bottom: 6vw;
@@ -350,7 +374,7 @@ footer a {
     align-items: end;
     color: #05328e;
 }
-#srvc {
+.srvc {
     display: flex;
     justify-content: space-around;
     text-align: center;
@@ -376,6 +400,11 @@ footer a {
     font-size: 3vw;
     margin-top: 5vw;
 }
+#storitve a{
+    text-decoration: none;
+    text-align: center;
+    align-items: center;
+}
 #avtocesta :hover #srvc{
     scale: 1.1;
     transition-duration: 1s;
@@ -398,8 +427,11 @@ footer a {
 }
 
 .storitev {
+    width:20vw;
     font-size: 1.4vw;
+    text-align: center;
     margin: 2vw;
+    margin-bottom: none;
     padding: 3vw;
     background-color: #ffffff70;
     backdrop-filter: blur(0.1vw);
@@ -449,10 +481,21 @@ footer a {
     color: #547fd4;
     transition-duration: 100ms;
 }
-#top {
-    position: fixed;
-    z-index: 1;
-    bottom: 0;
-    right: 0;
-    margin-bottom: 1vw;
+.CEO .contacts {
+    font-size: 1.5vw;
+}
+#servicepage {
+    margin-inline: 10vw;
+    font-size: 2vw;
+}
+#servicepage h1{
+    margin: 1vw;
+    margin-bottom: 2vw;
+    margin-top: 2vw;
+    font-size: 5vw;
+    text-align: center;
+}
+#servicepage h2{
+    margin-top: 7vw;
+    font-size: 4vw;
 }

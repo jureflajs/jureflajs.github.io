@@ -428,6 +428,9 @@ footer a {
 .storitev a {
     color: inherit;
 }
+.storitev p {
+    font-size: 1.5vw;
+}
 .storitev {
     width:20vw;
     height: 12.5vw;
@@ -463,11 +466,18 @@ footer a {
     animation: storitevreverse 1s forwards;
 }
 
+#storitve a {
+    font: inherit;
 }
 #storitve h2 {
     margin: 0;
     margin-top: 1.2vw;
     color: #05328e;
+    transition-duration: 300ms;
+}
+#storitve h2:hover{
+    color: #0a45bc;
+    transition-duration: 300ms;
 }
 #lfooter img {
     width: 4vw;

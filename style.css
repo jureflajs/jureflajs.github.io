@@ -184,7 +184,7 @@ h1 {
     justify-content: space-around;
     align-items: center;
     color: #05328e;
-    font-size: 2vw;
+    font-size: 1.8vw;
     padding: 3vw;
     background-color: #ffffff;
     margin-inline: 20vw;
@@ -283,6 +283,7 @@ h1 {
 .CEO {
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     align-items: center;
     color: #05328e;
     text-align: center;
@@ -294,11 +295,14 @@ h1 {
     transition-duration: 300ms;
     font-size: 2vw;
     box-shadow: 0 0 2vw #01102d;
+    width: 20vw;
 
 }
 .CEO h4{
     margin: 0.2vw;
+    margin-top: 0.5vw;
     transition-duration: 300ms;
+    font-size: 2vw;
 }
 .CEO h5 {
     margin:0.1vw;
@@ -325,10 +329,6 @@ h1 {
     transform: scale(1.1);
     transition-duration: 300ms;
     box-shadow:0 0 2vw #041a45 ;
-}
-.CEO img:hover h4{
-    padding-top: 1vw;
-    transition-duration: 300ms;
 }
 footer {
     padding-bottom: 6vw;
@@ -425,9 +425,12 @@ footer a {
         transform: translateY(3vw);
     }
 }
-
+.storitev a {
+    color: inherit;
+}
 .storitev {
     width:20vw;
+    height: 12.5vw;
     font-size: 1.4vw;
     text-align: center;
     margin: 2vw;
@@ -458,6 +461,8 @@ footer a {
 }
 .storitev:not(:hover) h3{
     animation: storitevreverse 1s forwards;
+}
+
 }
 #storitve h2 {
     margin: 0;

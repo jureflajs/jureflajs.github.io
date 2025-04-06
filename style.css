@@ -155,7 +155,7 @@ h1 {
     scale: 1.1;
 }
 #slovenija {
-    max-width: 50vw;
+    width: 50vw;
     margin-top: 4vw;
     transition-duration: 200ms;
     filter: drop-shadow(0 0 0.5vw #000000);
@@ -400,6 +400,9 @@ footer a {
     font-size: 3vw;
     margin-top: 5vw;
 }
+#storitve h2 {
+    font-size: 4vw;
+}
 #storitve a{
     text-decoration: none;
     text-align: center;
@@ -513,4 +516,21 @@ footer a {
 #servicepage h2{
     margin-top: 7vw;
     font-size: 4vw;
+}
+#voznipark {
+    display: block;
+    align-items: center;
+    justify-content: center;
+    margin-inline: 10vw;
+}
+#voznipark h2{
+    font-size: 4vw;
+    text-align: center;
+}
+#voznipark p {
+    font-size: clamp(15px, 2vw, 4vw);
+    text-align: left;
+}
+#voznipark li{
+    font-size: clamp(15px, 2vw, 4vw);
 }

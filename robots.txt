@@ -1,0 +1,28 @@
+# Allow all search engines to crawl all pages except for sensitive areas
+User-agent: *
+Disallow: /admin/
+Disallow: /login/
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /private/
+Disallow: /tmp/
+
+# Block spam bots
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+# Allow access to essential bots for proper SEO (like Googlebot and others)
+User-agent: Googlebot
+Disallow:
+
+User-agent: Bingbot
+Disallow:
+
+User-agent: DuckDuckBot
+Disallow:
+
+# Sitemap location (critical for SEO)
+Sitemap: https://jureflajs.github.io/sitemap.xml

@@ -251,7 +251,7 @@ h1 {
     font-size: 5vw;
     margin: 0;
     text-shadow: 0 0 3vw rgb(255, 255, 255);
-    transition-duration: 20s;
+    transition-duration: 2s;
 }
 .statistika h5:hover{
     text-shadow: 0 0 5vw rgb(255, 255, 255);
@@ -373,6 +373,8 @@ footer a {
     justify-content: space-between;
     align-items: end;
     color: #05328e;
+    margin-bottom: 0;
+    padding-bottom:0 ;
 }
 .srvc {
     display: flex;
@@ -533,4 +535,33 @@ footer a {
 }
 #voznipark li{
     font-size: clamp(15px, 2vw, 4vw);
+}
+#spodaj {
+    color: inherit;
+    font: inherit;
+    background-color: inherit;
+    margin-bottom: 10vw;
+}
+.container {
+    margin: 1vw;
+    display: grid;
+    grid-template-columns: 40vw 40vw;
+}
+.item {
+    display: flex;
+    align-items: center;
+    background-color: #041a45;
+    border-radius: 1vw;
+    margin: 1vw;
+    width: 35vw;
+    height: 10vw;
+}
+.item img {
+    width: 4vw;
+    margin: 2vw;
+}
+.item p {
+    all: unset;
+    font-size: 1.8vw !important;
+    padding: 1vw;
 }

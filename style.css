@@ -439,7 +439,7 @@ footer a {
 .storitev {
     width:20vw;
     height: 12.5vw;
-    font-size: 1.4vw;
+    font-size: 1.4vw !important;
     text-align: center;
     margin: 2vw;
     margin-bottom: none;
@@ -507,6 +507,8 @@ footer a {
 #servicepage {
     margin-inline: 10vw;
     font-size: 2vw;
+    margin-bottom: 10vw;
+    margin-top: 5vw;
 }
 #servicepage h1{
     margin: 1vw;

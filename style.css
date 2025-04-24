@@ -432,15 +432,14 @@ footer a {
 }
 .storitev a {
     color: inherit;
-    font-size: 1.5vw !important;
 }
 .storitev p {
-    font-size: 1.5vw !important;
+    font-size: clamp(0.1rem, 1.4vw, 1rem) !important;
 }
 .storitev {
     width:20vw;
     height: 12.5vw;
-    font-size: 1.4vw !important;
+    font-size: 1.4vw;
     text-align: center;
     margin: 2vw;
     margin-bottom: none;

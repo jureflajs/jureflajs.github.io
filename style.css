@@ -434,7 +434,15 @@ footer a {
     color: inherit;
 }
 .storitev p {
-    font-size: clamp(10px, 1.2vw, 16px) !important;
+    /* Much smaller values for mobile */
+    font-size: clamp(8px, 0.8vw, 14px) !important;
+}
+
+/* Add this separate rule for mobile only */
+@media screen and (max-width: 768px) {
+    .storitev p {
+        font-size: 10px !important; /* Fixed size for mobile */
+    }
 }
 
 .storitev {

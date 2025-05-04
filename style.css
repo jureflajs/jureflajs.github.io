@@ -434,7 +434,7 @@ footer a {
     color: inherit;
 }
 .storitev p {
-    font-size: clamp(0.1rem, 1.4vw, 1rem) !important;
+    font-size: 1.6vw !important;
 }
 .storitev {
     width:20vw;

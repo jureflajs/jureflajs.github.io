@@ -434,7 +434,25 @@ footer a {
     color: inherit;
 }
 .storitev p {
-    font-size: 1.6vw !important;
+    font-size: clamp(12px, 1.6vw, 20px) !important;
+}
+
+@media screen and (max-width: 768px) {
+    .storitev {
+        width: 80%;
+        height: auto;
+        padding: 2rem;
+        margin: 1rem auto;
+    }
+    
+    .srvc {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #storitve {
+        margin: 2rem;
+    }
 }
 .storitev {
     width:20vw;

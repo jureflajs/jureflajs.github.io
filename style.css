@@ -1,4 +1,3 @@
-/* Original desktop styles preserved */
 html {
     scroll-behavior: smooth;
 }
@@ -16,14 +15,35 @@ body::selection{
 ::-webkit-scrollbar {
     width: 0.6vw;
     background-color: transparent;
-    background-repeat: no-repeat;
 }
-::-webkit-scrollbar-thumb{
-    background: linear-gradient(to bottom, #0a45bc,#041a45);
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #0a45bc, #041a45);
     border-radius: 1vw;
 }
-::-webkit-scrollbar-track{
-    background: linear-gradient(to bottom, #0a45bc,#041a45);
+::-webkit-scrollbar-track {
+    background: linear-gradient(to bottom, #0a45bc, #041a45);
+}
+
+/* Hide scrollbar on mobile for all browsers */
+@media screen and (max-width: 768px) {
+    html, body {
+        scrollbar-width: none !important; /* Firefox */
+        -ms-overflow-style: none !important; /* IE/Edge */
+        overflow-x: hidden !important;
+        width: 100%;
+        max-width: 100%;
+    }
+    ::-webkit-scrollbar {
+        width: 0 !important;
+        height: 0 !important;
+        display: none !important;
+        background: transparent !important;
+    }
+    ::-webkit-scrollbar-thumb,
+    ::-webkit-scrollbar-track {
+        display: none !important;
+        background: transparent !important;
+    }
 }
 @keyframes fadeIn {
     from {
@@ -82,65 +102,123 @@ body::selection{
     align-items: center;
     gap: 3.7vw;
 }
+/* Hero Section */
 #home {
     background-image: url(images/homepage.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    position: relative;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
-@keyframes button{
-    0% {outline: 0vw solid white;}
-    90% {
-        outline-offset: 1vw;
-        outline: 0.2vw solid transparent;}
-    100% {
-        outline-offset: 1vw;
-        outline: 0.2vw solid transparent;}
+/* Overlay for better text readability */
+#home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 40, 0.5); /* Matches .parallax::before for consistency */
+    z-index: 1;
 }
-@keyframes buttonhover{
-    0% {outline: 0vw solid white;
-    outline-offset: 0vw;}
 
-    90% {
-        outline-offset: 2vw;
-        outline: 0.2vw solid transparent;}
-    100% {
-        outline-offset: 2vw;
-        outline: 0.2vw solid transparent;}
-}
-#home button{
-    font: inherit;
-    font-size: 1.3vw;
+/* Hero Heading */
+#home h1 {
+    position: relative;
+    z-index: 2;
+    font-size: clamp(4rem, 12vw, 10rem); /* Responsive font size */
     font-weight: 900;
-    text-align: center;
-    transform: translateY(-12vw);
-    padding: 0.8vw;
-    padding-inline: 4vw;
-    border-radius: 3vw;
     color: white;
-    background:linear-gradient(to bottom, #05328e, #082766) ;
-    border: solid 0.1vw;
-    transition-duration:500ms ;
-    animation: button 1s  infinite;
-}
-#home button:hover{
-    scale: 1.05;
-    transition-duration: 500ms;
-    outline-offset: 2vw;
-    animation:buttonhover 1s infinite;
-    cursor: pointer;
-}
-h1 {
-    text-align: center;
+    text-shadow: 0 0 1vw rgba(0, 0, 0, 0.7);
+    margin: 2vw 5vw;
     animation: fadeIn 1s ease-out forwards;
-    font-size: 16vw;
-    margin-top: 15vw;
-    margin-bottom: 15vw;
-    text-shadow: 0vw 0vw 5vw #000000;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+/* Hero Button */
+#home button {
+    position: relative;
+    z-index: 2;
+    font: inherit;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    padding: 1rem 3rem;
+    border-radius: 2rem;
+    color: white;
+    background: linear-gradient(135deg, #0a45bc, #082766); /* Matches .contact-btn */
+    border: none;
+    box-shadow: 0 0.5rem 1rem rgba(8, 39, 102, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.8s ease forwards 0.2s;
+    opacity: 0;
+}
+
+/* Button Hover Effect */
+#home button:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, #082766, #0a45bc);
+    box-shadow: 0 0.7rem 1.5rem rgba(8, 39, 102, 0.4);
+    scale: 1.05;
+}
+
+/* Animation for Button */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile Optimizations */
+@media screen and (max-width: 767px) {
+    #home {
+        min-height: 80vh; /* Slightly shorter for mobile */
+        padding: 2rem 1rem;
+    }
+
+    #home h1 {
+        font-size: clamp(2.5rem, 10vw, 3.5rem); /* Smaller for mobile */
+        margin: 1rem 2rem;
+    }
+
+    #home h1::after {
+        width: 6rem; /* Smaller underline */
+        height: 0.3rem;
+    }
+
+    #home button {
+        font-size: clamp(0.9rem, 4vw, 1rem);
+        padding: 0.8rem 2rem;
+        border-radius: 1.5rem;
+    }
+}
+
+/* Extra Small Screens */
+@media screen and (max-width: 360px) {
+    #home h1 {
+        font-size: clamp(2rem, 8vw, 2.8rem);
+    }
+
+    #home button {
+        font-size: 0.85rem;
+        padding: 0.7rem 1.5rem;
+    }
 }
 
 #onas   {
@@ -187,9 +265,10 @@ h1 {
     background: rgba(255, 255, 255, 0.97);
     border-radius: 1.5rem;
     box-shadow: 0 1rem 3rem rgba(4, 26, 69, 0.3);
-    overflow: hidden;
+    overflow: hidden; /* Already present, reinforces clipping */
     color: #05328e;
     border: none;
+    box-sizing: border-box; /* Ensure padding is included in width */
 }
 
 #kontakt::before {
@@ -200,6 +279,8 @@ h1 {
     width: 100%;
     height: 0.5rem;
     background: linear-gradient(to right, #0a45bc, #082766, #0a45bc);
+    overflow: hidden; /* Clip any overflow */
+    z-index: 1; /* Ensure it stays within the section */
 }
 
 #kontakt::after {
@@ -413,11 +494,14 @@ h1 {
 .contact-card:nth-child(2) { animation-delay: 0.3s; }
 .contact-card:nth-child(3) { animation-delay: 0.5s; }
 
-/* Mobile responsiveness */
 @media screen and (max-width: 992px) {
     #kontakt {
         width: 90%;
-        padding: 4rem 1.5rem;
+        padding: 3rem 1rem;
+        margin: 3rem auto;
+        border-radius: 1rem;
+        box-sizing: border-box;
+        overflow-x: hidden;
     }
     
     #kontakt h2 {
@@ -425,56 +509,36 @@ h1 {
     }
     
     .contact-grid {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
     }
 }
 
 @media screen and (max-width: 768px) {
-    #kontakt {
-        width: 95%;
-        padding: 3rem 1.5rem;
-        margin: 4rem auto;
-    }
-    
-    #kontakt h2 {
-        font-size: 2.2rem;
-        margin-bottom: 2rem;
-    }
-    
-    .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    
-    .contact-card {
-        padding: 1.5rem;
-    }
-    
-    .contact-icon {
-        width: 4rem;
-        height: 4rem;
-    }
-    
-    .contact-title {
-        font-size: 1.3rem;
+    #kontakt::before,
+    #kontakt::after {
+        display: none !important; /* Disable both pseudo-elements */
     }
 }
 
+
 @media screen and (max-width: 480px) {
     #kontakt {
-        width: 100%;
-        padding: 2.5rem 1rem;
-        margin: 3rem auto;
-        border-radius: 1rem;
+        width: 85%; /* Reduced from 65% */
+        padding: 1.5rem 0.6rem;
+        margin: 1.5rem auto; /* Reduced from 2.3rem */
+        border-radius: 0.6rem;
+        box-sizing: border-box;
+        overflow-x: hidden;
     }
     
     #kontakt h2 {
         font-size: 1.8rem;
+        margin-bottom: 1rem;
     }
     
     .contact-card {
-        padding: 1.2rem;
+        padding: 1rem;
     }
     
     .contact-icon {
@@ -487,12 +551,41 @@ h1 {
     }
     
     .contact-info li {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
     
     .contact-btn {
-        padding: 0.7rem 1.5rem;
+        padding: 0.6rem 1rem;
         font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    #kontakt {
+        width: 90%; /* Increased slightly for better fit */
+        padding: 1.2rem 0.5rem;
+        margin: 1rem auto;
+        border-radius: 0.5rem;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+    
+    #kontakt h2 {
+        font-size: 1.6rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .contact-card {
+        padding: 0.8rem;
+    }
+    
+    .contact-info li {
+        font-size: 0.9rem;
+    }
+    
+    .contact-btn {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.85rem;
     }
 }
 .gallery {
@@ -520,43 +613,161 @@ h1 {
 .slike {
     padding-top: 10vw;
 }
+/* Parallax Section */
 .parallax {
     background-image: url(images/paralax.jpg);
-    height: 100%;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
+    padding: 5vw 0;
+    overflow: hidden;
+    box-sizing: border-box;
 }
+
+/* Temnejši prekrivni sloj za kontrast */
+.parallax::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 40, 0.5);
+    z-index: 1;
+}
+
+/* Statistike Section */
 .statistike {
     display: flex;
     justify-content: space-around;
+    margin-top: 15vw;
+    margin-bottom: 15vw;
+    margin-inline: 7vw;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    max-width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
 }
+
+.statistika {
+    flex: 1;
+    padding: 2vw;
+    transition: transform 0.3s ease;
+}
+
+.statistika:hover {
+    transform: scale(1.05);
+}
+
 .statistika h5 {
     font-size: 5vw;
     margin: 0;
+    color: white;
     text-shadow: 0 0 3vw rgb(255, 255, 255);
-    transition-duration: 2s;
+    transition: text-shadow 2s ease;
 }
-.statistika h5:hover{
-    text-shadow: 0 0 5vw rgb(255, 255, 255);
-    transition-duration: 2s;
 
+.statistika h5:hover {
+    text-shadow: 0 0 5vw rgb(255, 255, 255);
 }
-.statistika {
-    margin-top: 15vw;
-    margin-bottom: 15vw;
-    text-align: center;
-    margin-inline: 7vw;
-}
+
 .statistika p {
     font-size: 2vw;
+    margin: 0.5vw 0 0;
+    color: white;
     text-shadow: 0 0 0vw #FFFFFF;
-    transition-duration: 3s;
+    transition: text-shadow 1s ease;
 }
-.statistika p:hover{
+
+.statistika p:hover {
     text-shadow: 0 0 0.3vw #FFFFFF;
-    transition-duration: 1s;
+}
+
+/* Mobile Media Query */
+@media screen and (max-width: 767px) {
+    .parallax {
+        background-image: url(images/paralax.jpg); /* Ohrani sliko */
+        background-attachment: scroll; /* Statično ozadje */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover; /* Pokrij cel zaslon */
+        padding: 2rem 0;
+        max-width: 100%;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    .parallax::before {
+        background: rgba(0, 0, 40, 0.5); /* Ohrani prekrivni sloj */
+    }
+
+    .statistike {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+        margin-inline: 1rem;
+        gap: 2rem;
+        max-width: 100%;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    .statistika {
+        width: 90%;
+        padding: 1.5rem;
+        animation: fadeInUp 0.6s ease forwards;
+        opacity: 0;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .statistika:hover,
+    .statistika:active {
+        transform: scale(1.03);
+        box-shadow: 0 0.7rem 1.5rem rgba(4, 26, 69, 0.3);
+    }
+
+    .statistika:nth-child(1) { animation-delay: 0.1s; }
+    .statistika:nth-child(2) { animation-delay: 0.3s; }
+    .statistika:nth-child(3) { animation-delay: 0.5s; }
+
+    .statistika h5 {
+        font-size: clamp(2.5rem, 10vw, 3.5rem);
+        text-shadow: 0 0 0.5rem rgb(255, 255, 255);
+        transition: text-shadow 0.5s ease;
+    }
+
+    .statistika h5:hover,
+    .statistika h5:active {
+        text-shadow: 0 0 0.8rem rgb(255, 255, 255);
+    }
+
+    .statistika p {
+        font-size: clamp(1rem, 4vw, 1.2rem);
+        text-shadow: 0 0 0rem #FFFFFF;
+        transition: text-shadow 0.5s ease;
+    }
+
+    .statistika p:hover,
+    .statistika p:active {
+        text-shadow: 0 0 0.2rem #FFFFFF;
+    }
+}
+
+/* FadeInUp Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 #uprava {
     margin-top: 5vw;
@@ -906,29 +1117,41 @@ footer a {
     align-items: center;
     justify-content: center;
     margin-inline: 10vw;
+    max-width: 100%; /* Dodano za preprečitev prelivanja */
+    overflow: hidden; /* Dodano za preprečitev modre črte */
+    box-sizing: border-box; /* Dodano za doslednost */
 }
-#voznipark h2{
+
+#voznipark h2 {
     font-size: 4vw;
     text-align: center;
 }
+
 #voznipark p {
     font-size: clamp(15px, 2vw, 4vw);
     text-align: left;
 }
-#voznipark li{
+
+#voznipark li {
     font-size: clamp(15px, 2vw, 4vw);
 }
+
 #spodaj {
     color: inherit;
     font: inherit;
     background-color: inherit;
     margin-bottom: 10vw;
 }
+
 .container {
     margin: 1vw;
     display: grid;
     grid-template-columns: 40vw 40vw;
+    max-width: 100%; /* Dodano za preprečitev prelivanja */
+    overflow: hidden; /* Dodano za preprečitev modre črte */
+    box-sizing: border-box; /* Dodano za doslednost */
 }
+
 .item {
     display: flex;
     align-items: center;
@@ -937,17 +1160,70 @@ footer a {
     margin: 1vw;
     width: 35vw;
     height: 10vw;
+    box-sizing: border-box; /* Dodano za doslednost */
 }
+
 .item img {
     width: 4vw;
     margin: 2vw;
 }
+
 .item p {
     all: unset;
     font-size: 1.8vw !important;
     padding: 1vw;
 }
 
+/* Mobile Media Query */
+@media screen and (max-width: 767px) {
+    #voznipark {
+        margin-inline: 5vw; /* Zmanjšan margin za več prostora */
+        max-width: 100%;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    #voznipark h2 {
+        font-size: clamp(1.8rem, 6vw, 2.2rem); /* Prilagojeno za mobilne naprave */
+    }
+
+    #voznipark p {
+        font-size: clamp(0.9rem, 4vw, 1rem); /* Prilagojeno za boljšo berljivost */
+    }
+
+    #spodaj {
+        margin-bottom: 5vw; /* Zmanjšan margin za kompaktnejši videz */
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column; /* En stolpec */
+        margin: 2vw; /* Malo povečan margin za boljši razmik */
+        gap: 2vw; /* Dodan razmik med karticami */
+        max-width: 100%;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    .item {
+        width: 90%; /* Prilagojeno za polno širino z robovi */
+        height: auto; /* Višina se prilagodi vsebini */
+        margin: 1vw auto; /* Centrirano z minimalnim marginom */
+        border-radius: 2vw; /* Malo povečan radius za boljši videz */
+        padding: 2vw; /* Dodan padding za boljši razmik vsebine */
+        box-sizing: border-box;
+    }
+
+    .item img {
+        width: 8vw; /* Povečana ikona za boljši videz */
+        margin: 2vw;
+    }
+
+    .item p {
+        font-size: clamp(0.9rem, 4vw, 1rem) !important; /* Prilagojeno za mobilne naprave */
+        padding: 2vw;
+    }
+}
 /* Mobile Optimizations - Only apply below 767px */
 @media screen and (max-width: 767px) {
     /* Fix header for mobile - UPDATED to be thinner */

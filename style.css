@@ -259,29 +259,16 @@ body::selection{
 #kontakt {
     padding: 5rem 2rem;
     margin: 7rem auto;
+    margin-top: 1vw;
     max-width: 1300px;
     width: 85%;
     position: relative;
-    background: rgba(255, 255, 255, 0.97);
-    border-radius: 1.5rem;
-    box-shadow: 0 1rem 3rem rgba(4, 26, 69, 0.3);
     overflow: hidden; /* Already present, reinforces clipping */
-    color: #05328e;
+    color: #ffffff;
     border: none;
     box-sizing: border-box; /* Ensure padding is included in width */
 }
 
-#kontakt::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 0.5rem;
-    background: linear-gradient(to right, #0a45bc, #082766, #0a45bc);
-    overflow: hidden; /* Clip any overflow */
-    z-index: 1; /* Ensure it stays within the section */
-}
 
 #kontakt::after {
     content: "";
@@ -303,20 +290,12 @@ body::selection{
     margin-bottom: 3rem;
     position: relative;
     z-index: 1;
-    color: #05328e;
+    color: #fdfdfd;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
 }
 
-#kontakt h2::after {
-    content: "";
-    display: block;
-    width: 8rem;
-    height: 0.35rem;
-    background: linear-gradient(to right, #082766, #0a45bc);
-    margin: 1rem auto 0;
-    border-radius: 0.5rem;
-}
+
 
 .contact-grid {
     display: grid;

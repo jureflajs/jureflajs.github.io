@@ -1,3 +1,4 @@
+/* Original desktop styles preserved */
 html {
     scroll-behavior: smooth;
 }
@@ -574,4 +575,79 @@ footer a {
     all: unset;
     font-size: 1.8vw !important;
     padding: 1vw;
+}
+
+/* Mobile Optimizations - Only apply below 767px */
+@media screen and (max-width: 767px) {
+    /* Fix header for mobile - UPDATED to be thinner */
+    #header {
+        max-height: none;
+        padding: 5px 0; /* Reduced from 10px to 5px */
+        flex-direction: column;
+    }
+    
+    #logo {
+        max-width: 40px; /* Reduced from 50px to 40px */
+        margin: 5px; /* Smaller margin */
+    }
+    
+    #navbar {
+        margin: 5px 0; /* Reduced from 10px to 5px */
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px; /* Reduced from 15px to 10px */
+    }
+    
+    #navbar a {
+        font-size: 14px; /* Reduced from 16px to 14px */
+        padding: 3px;
+    }
+    
+    #navbar p {
+        margin: 0; /* Remove default margins */
+    }
+    
+    /* Fix Services tabs to be same size on mobile */
+    .storitev {
+        width: 80%;
+        height: auto;
+        min-height: 80px; /* Standardize minimum height */
+        padding: 15px;
+        margin: 10px 0;
+        box-sizing: border-box; /* Ensure padding doesn't affect width */
+    }
+    
+    /* Footer navbar alignment for mobile */
+    #foot {
+        flex-direction: column;
+        align-items: flex-start; /* Align to left instead of center */
+        width: 100%;
+        padding-left: 20px; /* Add some padding */
+    }
+    
+    #rfooter {
+        align-self: flex-start; /* Ensure left alignment */
+        width: 100%;
+        padding-left: 0; /* Remove any existing padding */
+    }
+    
+    #lfooter {
+        align-self: flex-start; /* Ensure left alignment */
+        width: 100%;
+    }
+}
+/* Additional adjustments for tiny screens */
+@media screen and (max-width: 360px) {
+    #navbar a {
+        font-size: 14px;
+        padding: 3px;
+    }
+    
+    h1 {
+        font-size: 36px;
+    }
+    
+    #kontakt {
+        padding: 15px;
+    }
 }

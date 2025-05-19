@@ -387,111 +387,218 @@ footer a {
 #avtocesta {
     background-image: url(images/highway.jpg);
     background-size: cover;
-    background-attachment:fixed;
-    background-repeat: no-repeat;
     background-position: center;
+    padding: 6rem 1rem;
+    position: relative;
 }
+
+#avtocesta::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 40, 0.7);
+    z-index: 1;
+}
+
 #storitve {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 1rem;
+    color: white;
+}
+
+#storitve h2 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: white;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+#storitve h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #0a45bc;
+    border-radius: 2px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    height: 100%;
     display: flex;
     flex-direction: column;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.service-icon {
+    height: 80px;
+    display: flex;
     align-items: center;
-    padding: 1vw;
-    margin: 15vw;
-    margin-inline: 15vw;
-    color: #041a45;
-    border-radius: 3vw;
-    font-size: 3vw;
-    margin-top: 5vw;
+    justify-content: center;
+    margin: 1.5rem auto;
 }
-#storitve h2 {
-    font-size: 4vw;
+
+.service-icon img {
+    width: 60px;
+    height: 60px;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
+    transition: all 0.3s ease;
 }
-#storitve a{
-    text-decoration: none;
+
+.service-card:hover .service-icon img {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.8));
+}
+
+.service-content {
+    padding: 0 1.5rem 1.5rem;
     text-align: center;
-    align-items: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
-#avtocesta :hover #srvc{
-    scale: 1.1;
-    transition-duration: 1s;
+
+.service-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: white;
+    font-weight: 700;
 }
-@keyframes storitev {
+
+.service-content p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.service-button {
+    margin-top: auto;
+    background: linear-gradient(135deg, #0a45bc, #082766);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    transition: all 0.3s ease;
+    border: none;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(10, 69, 188, 0.4);
+}
+
+.service-button:hover {
+    background: linear-gradient(135deg, #082766, #0a45bc);
+    box-shadow: 0 6px 20px rgba(10, 69, 188, 0.6);
+    transform: translateY(-3px);
+}
+
+/* Animation for service cards */
+@keyframes fadeInUp {
     from {
-        transform: translateY(3vw);
+        opacity: 0;
+        transform: translateY(20px);
     }
-    to{
+    to {
+        opacity: 1;
         transform: translateY(0);
     }
 }
-@keyframes storitevreverse {
-    from {
-        transform: translateY(0vw);
-    }
-    to{
-        transform: translateY(3vw);
-    }
-}
-.storitev a {
-    color: inherit;
-}
-.storitev p {
-    font-size: 8px !important; /* Fixed small size */
+
+.service-card {
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
 }
 
-/* Add this specific media query for larger screens only */
-@media screen and (min-width: 768px) {
-    .storitev p {
-        font-size: 1.6vw !important; /* Your original size for desktops */
-    }
-}
+.service-card:nth-child(1) { animation-delay: 0.1s; }
+.service-card:nth-child(2) { animation-delay: 0.2s; }
+.service-card:nth-child(3) { animation-delay: 0.3s; }
+.service-card:nth-child(4) { animation-delay: 0.4s; }
+.service-card:nth-child(5) { animation-delay: 0.5s; }
+.service-card:nth-child(6) { animation-delay: 0.6s; }
+.service-card:nth-child(7) { animation-delay: 0.7s; }
 
-.storitev {
-    width:20vw;
-    height: 12.5vw;
-    font-size: 1.4vw;
-    text-align: center;
-    margin: 2vw;
-    margin-bottom: none;
-    padding: 3vw;
-    background-color: #ffffff70;
-    backdrop-filter: blur(0.1vw);
-    color: #041a4500;
-    border-radius: 2vw;
-    transition-duration: 700ms;
-    box-shadow: 0 0 0 black;
-}
-.storitev:hover{
-    color: #041a45;
-    scale: 1.1;
-    box-shadow: 0 0 3vw rgba(0, 0, 0, 0.51);
-    background-color: #ffffffc3;
-    transition-duration: 700ms;
+/* Mobile Optimizations */
+@media screen and (max-width: 767px) {
+    #avtocesta {
+        padding: 3rem 1rem;
+    }
     
+    #storitve h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .service-card {
+        max-width: 100%;
+    }
+    
+    .service-icon {
+        height: 60px;
+        margin: 1rem auto;
+    }
+    
+    .service-icon img {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .service-content h3 {
+        font-size: 1.3rem;
+    }
+    
+    .service-content p {
+        font-size: 0.95rem;
+    }
+    
+    .service-button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.8rem;
+    }
 }
-.storitev h3{
-    transform: translateY(3vw);
-    color: #041a45;
 
-}
-.storitev:hover h3{
-    animation: storitev 1s forwards;
-}
-.storitev:not(:hover) h3{
-    animation: storitevreverse 1s forwards;
-}
-
-#storitve a {
-    font: inherit;
-}
-#storitve h2 {
-    margin: 0;
-    margin-top: 1.2vw;
-    color: #05328e;
-    transition-duration: 300ms;
-}
-#storitve h2:hover{
-    color: #0a45bc;
-    transition-duration: 300ms;
+/* For larger mobile devices and small tablets */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 #lfooter img {
     width: 4vw;
